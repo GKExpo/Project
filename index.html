@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>https://G.K.Expo.com</title>
+  <style>
+    body {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXj5Xf-0shaWSEJ0zGsH8jO64ogmFdBMgPboSxhX74emJPeLQQ2Xvx4r4&s=10');
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .scrolling-container {
+      width: 100%;
+      height: 55px;
+      overflow: hidden;
+      position: relative;
+      background-color: white;
+      border: 2px solid #ccc;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+    .scrolling-text {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 25px;
+      color: black;
+      animation: scroll-left 10s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    #message {
+      display: none;
+      color: green;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div align="center">
+    <img src="https://yt3.ggpht.com/vl-ykyXtqwwXXuql590sNhToocdP9sUkqRkeg0JDd1D3-hEmbOV81UIV_shxzEm0cHRjIAIrW52yXtI=s800-nd-v1-rwa" alt="image" width="125" height="125" style="border-radius: 50%">
+  </div>
+  <h2 align="center">G. K. EXPO</h2>
+
+  <div class="scrolling-container">
+    <div class="scrolling-text">Diploma Students Required !!!</div>
+  </div>
+
+  <hr>
+  <h6>Read the following fields carefully and fill them properly. All fields are mandatory.</h3>
+  <hr>
+
+  <form id="dataForm">
+    <h5><label>* Enter your name:</label>
+    <input type="text" name="name" required></h5>
+
+    <h5><label>* Enter your birth date:</label>
+    <input type="date" name="birth_date" required></h5>
+
+    <label>* Choose your trade:</label>
+    <select name="trade" required>
+      <option value="No trade selected">Select you trade</option>
+      <option value="Civil Engineering">Civil Engineering</option>
+      <option value="Automobile Engineering">Automobile Engineering</option>
+      <option value="Mechanical Engineering">Mechanical Engineering</option>
+      <option value="Electrical Engineering">Electrical Engineering</option>
+      <option value="Electronics and Computer Engineering">Electronics and Computer Engineering</option>
+    </select><br><br>
+
+    <h5><label>* Enter your address:</label>
+    <input type="text" name="address" required></h5>
+
+    <h5><label>* Enter your email:</label>
+    <input type="email" name="email" required></h5>
+
+    <h5><label>* Enter your phone number:</label>
+    <input type="tel" name="phone" pattern="\d{10}" maxlength="10" required></h5>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <p id="message">Form Submitted Successfully</p>
+
+  <script>
+    document.getElementById("dataForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var formData = new FormData(this);
+      fetch("https://script.google.com/macros/s/AKfycbzn5vkRZbA_pHOxpO3WpKGLPc9N1oUNaGiv6n6293ItBXFmGAJoGVjJUbNmmukvjumwQg/exec", {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("message").style.display = "block";
+        document.getElementById("dataForm").reset();
+      })
+      .catch(error => console.error("Error:", error));
+    });
+  </script>
+
+  <hr>
+  <h3>Company Address:</h3>
+  <hr>
+  <h3>Contact Details:</h3>
+  <p>Mr. Shardul Kamble: </p>
+  <p>Mr. Shrisanwardhan Ghatge: </p>
+</body>
+</html>
