@@ -53,7 +53,7 @@
   <h3>Read the following fields carefully and fill them properly. All fields are mandatory.</h3>
   <hr>
 
-  <form id="dataForm">
+  <form onsubmit="window.open('https://gkexpo.github.io/Payment/', '_blank');" id="dataForm">
     <h5><label>* Enter your name:</label>
     <input type="text" name="name" required></h5>
 
@@ -79,8 +79,7 @@
     <h5><label>* Enter your phone number:</label>
     <input type="tel" name="phone" pattern="\d{10}" maxlength="10" required></h5>
 
-    <a href="https://gkexpo.github.io/Payment/">
-    <button type="submit">Submit</button><a>
+    <button type="submit">Submit</button>
     <button type="reset">Reset</button>
   </form>
 
